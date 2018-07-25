@@ -197,15 +197,15 @@ top: 60px;
       }
     }
 
+    var answer = [0,0,0,0,0,0,0,0,0,0]
     function clickQuestion(i) {
-      if (answer >= correctAnswer)
-        return
-
+      
       $('#box' + i).removeClass('hide')
-      answer++
+      answer[i] = 1
 
-      if (answer == correctAnswer)
-        $('#right_div').fadeIn();
+      if(answer[1] + answer[2] + answer[3] + answer[4] + answer[5] + answer[6] + answer[7] >= 7){
+          $('#right_div').fadeIn(); 
+      }
     }
 
     function confirm() {
