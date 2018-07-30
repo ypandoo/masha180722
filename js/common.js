@@ -37,7 +37,7 @@ $(document).ready(function () {
     $(".next").attr('data', page)
     var imageURL = ""
     window.currentPage < 10 ? imageURL = '0' + (window.currentPage) + '.jpg' : imageURL = (window.currentPage) + '.jpg'
-    imageURL = window.objectURL + imageURL
+    imageURL = window.objectURL + imageURL + '?v=' + Math.round(Math.random()*100000)
     $("#page_image").attr('src', imageURL)
 
     loadMenu()
@@ -202,20 +202,6 @@ $(function(){
 		//fullscreen();
 	});
 
-    $(".audio-image").click(function(){
-        var audio = document.getElementById("bgMusic");
-        audio.play();
-    });
-
-    $(".audio-image").hover(function(){
-        var obj = document.getElementById("audioID");
-        obj.style.filter = "grayscale(1)";
-    },
-    function(){
-        var obj = document.getElementById("audioID");
-        obj.style.filter = "";
-    });
-
 	$(".out-f,.out").click(function(){
 		//window.location.href="http://www.maseratiacademychina.com/web/Course/Course_Information.aspx?Type=Course&infoid=13&TypeInfo=1";
 		window.parent.window.opener = null;  
@@ -226,34 +212,7 @@ $(function(){
 		   window.parent.window.location.href="about:blank";
 		}
 	});
-	$(".menu").bind().click(function(){
-		if($("#menu-list").hasClass("hide")){
-			$("#menu-list").removeClass('hide');
-			$("#menu-list").animate({height:'200px'},0,'linear');
-			setTimeout(function(){
-				$(".menu-li-01").removeClass("hide");
-			},200);
-			setTimeout(function(){
-				$(".menu-li-02").removeClass("hide");
-			},400);
-			setTimeout(function(){
-				$(".menu-li-03").removeClass("hide");
-			},600);
-			setTimeout(function(){
-				$(".menu-li-04").removeClass("hide");
-			},800);
-			setTimeout(function(){
-				$(".menu-li-05").removeClass("hide");
-			},1000);
-			setTimeout(function(){
-				$(".menu-li-06").removeClass("hide");
-			},1200);
-		}else{			
-			$("#menu-list").animate({height:'0'});
-			$("#menu-list").addClass('hide');
-			$(".menu-li").addClass("hide");
-		}		
-	});
+
 })
 
 function getURL()
