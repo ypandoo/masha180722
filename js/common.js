@@ -23,7 +23,9 @@ if (window.currentPage >= window.learnedPage) {
 //initialize page navigation
 
 $(document).ready(function () {
-    document.getElementById("page_mark").innerHTML = window.currentPage + '/' + window.total_page;
+    if(document.getElementById("page_mark"))
+        document.getElementById("page_mark").innerHTML = window.currentPage + '/' + window.total_page;
+        
     if(window.disableNextPage == 1){
         $("#page_next").hide()
     }
