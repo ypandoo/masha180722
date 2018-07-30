@@ -31,36 +31,13 @@
       cursor: pointer;
     }
 
-    .item1 {
-top: 160px;
-    left: 290px;
-    }
-
-    .item2 {
-top: 60px;
-    left: 420px;
-    }
-
-    .item3 {
- top: 240px; left: 320px;
-    }
-
-    .item4 {
- top: 215px; left: 150px;
-    }
-
-    .item5 {
- top: 270px; left: 70px;
-    }
-
-    .item6 {
-      top: 280px;
-      left: 310px;
-    }
-
-    .item7 {
- top: 270px; left: 185px;
-    }
+    .item1 {top: 160px;left: 290px;}
+    .item2 {left: 420px; top: 60px;}
+    .item3 {top: 270px; left: 360px;}
+    .item4 {top: 215px;left: 100px;width: 200px;height: 50px;}
+    .item5 {top: 270px; left: 70px;}
+    .item6 {top: 280px;left: 310px;}
+    .item7 {top: 270px;left: 145px;width: 150px;}
 
     .item8 {
       position: absolute;
@@ -70,7 +47,7 @@ top: 60px;
       left: 0px;
     }
 
-    .item-box .box {
+    .box {
       height: 20px;
       width: 20px;
       margin-top: 15px;
@@ -79,7 +56,16 @@ top: 60px;
       border-radius: 10px;
       border: 4px solid #444444;
       box-sizing: border-box;
+      position: absolute;
     }
+
+    .box1 {top: 160px;left: 290px;}
+    .box2 {left: 420px; top: 60px;}
+    .box3 {top: 270px; left: 360px;}
+    .box4 {top: 215px; left: 150px;}
+    .box5 {top: 270px; left: 70px;}
+    .box55 {top: 280px;left: 310px;}
+    .box7 {top: 270px; left: 185px;}
 
     .item .active {
       border: 1px solid white;
@@ -125,27 +111,22 @@ top: 60px;
     </div>
 
     <div class="item">
-      <div class="item-box item1 " onclick="clickQuestion(1)">
-        <div class="box animated infinite pulse hide" id="box1"></div>
-      </div>
-      <div class="item-box item2 " onclick="clickQuestion(2)">
-        <div class="box animated infinite pulse hide" id="box2"></div>
-      </div>
-      <div class="item-box item3 " onclick="clickQuestion(3)">
-        <div class="box animated infinite pulse hide" id="box3"></div>
-      </div>
-      <div class="item-box item4 " onclick="clickQuestion(4)">
-        <div class="box animated infinite pulse hide" id="box4"></div>
-      </div>
-      <div class="item-box item5 " onclick="clickQuestion(5)">
-        <div class="box animated infinite pulse hide" id="box5"></div>
-      </div>
-      <div class="item-box item6 " onclick="clickQuestion(6)">
-        <div class="box animated infinite pulse hide" id="box6"></div>
-      </div>
-      <div class="item-box item7 " onclick="clickQuestion(7)">
-        <div class="box animated infinite pulse hide" id="box7"></div>
-      </div>
+      <div class="item-box item1 " onclick="clickQuestion(1)"></div>
+      <div class="item-box item2 " onclick="clickQuestion(2)"></div>
+      <div class="item-box item3 " onclick="clickQuestion(3)"></div>
+      <div class="item-box item4 " onclick="clickQuestion(4)"></div>
+      <div class="item-box item5 " onclick="clickQuestion(5)"></div>
+      <div class="item-box item6 " onclick="clickQuestion(5)"></div>
+      <div class="item-box item7 " onclick="clickQuestion(7)"></div>
+
+      <div class="box box1 animated infinite pulse hide"></div>
+      <!-- <div class="box box1 box11 animated infinite pulse hide"></div> -->
+      <div class="box box2 animated infinite pulse hide"></div>
+      <div class="box box3 animated infinite pulse hide"></div>
+      <div class="box box4 animated infinite pulse hide"></div>
+      <div class="box box5 animated infinite pulse hide"></div>
+      <div class="box box5 box55 animated infinite pulse hide"></div>
+      <div class="box box7 animated infinite pulse hide"></div>
     </div>
 
   </div>
@@ -200,10 +181,10 @@ top: 60px;
     var answer = [0,0,0,0,0,0,0,0,0,0]
     function clickQuestion(i) {
       
-      $('#box' + i).removeClass('hide')
+      $('.box' + i).removeClass('hide')
       answer[i] = 1
 
-      if(answer[1] + answer[2] + answer[3] + answer[4] + answer[5] + answer[6] + answer[7] >= 7){
+      if(answer[1] + answer[2] + answer[3] + answer[4] + answer[5] + answer[7] >= 6){
           $('#right_div').fadeIn(); 
       }
     }
